@@ -14,7 +14,7 @@
 `https://en.wikipedia.org/wiki/HTTP`
 
 ### Метод запроса
-`GET` — это HTTP-метод, используемый для запроса ресурса с сервера без изменения его состояния
+`GET` — это HTTP-метод, используемый для запроса ресурса с сервера без изменения его состояния. `GET` используется, потому что при открытии сайта браузер просто запрашивает страницу у сервера — «покажи мне эту страницу». Никакие данные на сервере не создаются и не изменяются.
 
 ### Статус ответа
 `200 OK` — запрос выполнен успешно, сервер вернул страницу.
@@ -257,10 +257,16 @@ Content-Type: application/json
 ```http
 POST /cars HTTP/1.1
 Host: sandbox.usm.com
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 User-Agent: Cavarnali Anastasia
+Accept: application/json
+Connection: close
 
-model=X3&make=BMW&year=2025
+{
+  "make": "BMW",
+  "model": "X3",
+  "year": 2025
+}
 ```
 
 Один из возможных вариантов ответа сервера (пример: 201 Created) :
@@ -287,6 +293,4 @@ Location: /cars/<id>
 - **403 Forbidden** — доступ запрещен: авторизация есть, но нет прав на создание ресурса
 - **404 Not Found** — адрес не найден (`/cars` или `Host` неправильные)
 - **500 Internal Server Error** — внутренняя ошибка сервера (сбой БД, баг в коде, необработанное исключение)
-
-
 
