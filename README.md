@@ -122,7 +122,7 @@
 
 ### 1. Основной запрос страницы: 
 
-![z3_github_1general.png](images/z3_github_1general.png)
+![z3_github_1general.png](images\z3_github_1general.png)
 
 ### URL запроса
 `https://github.com/`
@@ -228,13 +228,18 @@ make=BMW&model=X3&year=2025
 
 ### 3. PUT-запрос к серверу по адресу http://sandbox.usm.com/cars/1
 
- ```json
-   {
-     "make": "BMW",
-     "model": "X3",
-     "year": 2025
-   }
-  ```
+ ```http
+PUT /cars/1 HTTP/1.1
+Host: sandbox.usm.com
+User-Agent: Cavarnali Anastasia
+Content-Type: application/json
+
+{
+  "make": "BMW",
+  "model": "X3",
+  "year": 2025
+}
+```
 
 ####  В чем разница между PATCH и PUT запросами?
 
@@ -254,6 +259,7 @@ POST /cars HTTP/1.1
 Host: sandbox.usm.com
 Content-Type: application/x-www-form-urlencoded
 User-Agent: Cavarnali Anastasia
+
 model=X3&make=BMW&year=2025
 ```
 
@@ -265,7 +271,7 @@ Content-Type: application/json
 Location: /cars/<id>
 
 {
-  "id": "<id>"
+  "id": "<id>",
   "make": "BMW",
   "model": "X3",
   "year": 2025
