@@ -86,7 +86,7 @@
 ### Почему 404?
 Ресурс с таким путём **не существует** на сервере, поэтому сервер сообщает “не найдено”.
 
-![z1_httpdsfdfs_general.png](images\z1_httpdsfdfs_general.png)
+![z1_httpdsfdfs_general.png](images/z1_httpdsfdfs_general.png)
 
 
 ## Задание 2
@@ -122,7 +122,7 @@
 
 ### 1. Основной запрос страницы: 
 
-![z3_github_1general.png](images\z3_github_1general.png)
+![z3_github_1general.png](images/z3_github_1general.png)
 
 ### URL запроса
 `https://github.com/`
@@ -287,5 +287,6 @@ Location: /cars/<id>
 - **403 Forbidden** — доступ запрещен: авторизация есть, но нет прав на создание ресурса
 - **404 Not Found** — адрес не найден (`/cars` или `Host` неправильные)
 - **500 Internal Server Error** — внутренняя ошибка сервера (сбой БД, баг в коде, необработанное исключение)
+
 
 
