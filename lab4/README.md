@@ -23,6 +23,7 @@
 ### Задание 1.1. Подготовка среды
 
 1. Установлен PHP версии 8+
+
 ![](images/версияphp.png)
 
 2. Создан файл `index.php`
@@ -394,6 +395,7 @@ if ($deletedTransaction === null) {
 }
 ```
 ![](images/7.png)
+![](images/9.png)
 
 ### Задание 1.5. Сортировка транзакций 
 1. Сортировка транзакций по дате с использованием usort()
@@ -542,7 +544,7 @@ foreach ($files as $file) {
 
 ### 1.Что такое массивы в PHP?
 
-**Массивы в PHP** — это структура данных для хранения нескольких значений в одной переменной
+**Массивы в PHP** - это структура данных для хранения нескольких значений в одной переменной
 
 ### 2. Каким образом можно создать массив в PHP?
 
@@ -558,4 +560,40 @@ $numbers = array(1, 2, 3);
 ### 3. Для чего используется цикл `foreach`?
 
 Цикл `foreach` используется для перебора элементов массива. Он по очереди берет каждое значение из массива и позволяет выполнить с ним нужное действие, например вывести на экран
+
+## Вывод
+В ходе лабораторной работы были изучены массивы и функции в PHP. Был создан массив банковских транзакций, реализован их вывод в HTML-таблицу, а также разработаны функции для подсчета общей суммы, поиска, добавления, удаления и сортировки транзакций. Дополнительно была реализована работа с файловой системой: создана галерея изображений с выводом файлов из директории `image` на веб-страницу. В результате были закреплены навыки работы с массивами, функциями, циклом foreach, сортировкой данных и выводом информации в HTML средствами PHP
+
+## Источники
+
+1. Курс на Moodle  
+   https://elearning.usm.md/course/section.php?id=90384
+
+2. PHP Manual. Конструкция `foreach`  
+   https://www.php.net/manual/ru/control-structures.foreach.php
+
+3. PHP Manual. Функция `usort`  
+   https://www.php.net/manual/ru/function.usort.php
+
+4. PHP Manual. Функция `array_filter`  
+   https://www.php.net/manual/ru/function.array-filter.php
+
+5. PHP Manual. Сортировка массивов  
+   https://www.php.net/manual/ru/array.sorting.php
+
+6. PHP Manual. Класс `DateTime`  
+   https://www.php.net/manual/ru/class.datetime.php
+
+7. PHP Manual. Функция `scandir`  
+   https://www.php.net/manual/ru/function.scandir.php
+
+8. PHP Manual. Типы данных: массивы  
+   https://www.php.net/manual/ru/language.types.array.php
+
+9. PHP Manual. Функция `stripos`  
+   https://www.php.net/manual/ru/function.stripos.php
+
+10. ChatGPT  
+    https://chatgpt.com/
+
 
