@@ -1,17 +1,43 @@
 <?php
+
 declare(strict_types=1);
 
+/**
+ * Directory path containing gallery images.
+ *
+ * @var string
+ */
 $dir = 'image/';
+
+/**
+ * Reads the list of files from the image directory.
+ *
+ * scandir() returns an array of file and directory names,
+ * including "." and "..".
+ *
+ * @var array<int, string>|false
+ */
 $files = scandir($dir);
 
+/**
+ * Stops script execution if directory reading failed.
+ */
 if ($files === false) {
     return;
 }
 
+/**
+ * Stores the number of valid image files found in the directory.
+ *
+ * @var int
+ */
 $imageCount = 0;
 
+/**
+ * Counts valid files in the directory, excluding "." and "..".
+ */
 for ($i = 0; $i < count($files); $i++) {
-    if (($files[$i] != ".") && ($files[$i] != "..")) {
+    if (($files[$i] !== ".") && ($files[$i] !== "..")) {
         $imageCount++;
     }
 }
@@ -81,8 +107,17 @@ for ($i = 0; $i < count($files); $i++) {
 
     <div class="gallery">
         <?php
+        /**
+         * Iterates through all directory entries and displays images,
+         * excluding "." and "..".
+         */
         for ($i = 0; $i < count($files); $i++) {
-            if (($files[$i] != ".") && ($files[$i] != "..")) {
+            if (($files[$i] !== ".") && ($files[$i] !== "..")) {
+                /**
+                 * Full relative path to the image file.
+                 *
+                 * @var string
+                 */
                 $path = $dir . $files[$i];
                 ?>
                 <img src="<?php echo $path; ?>" alt="Image">
