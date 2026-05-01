@@ -1,0 +1,50 @@
+{% extends "layout.twig" %}
+
+{% block title %}Список учебных занятий{% endblock %}
+
+{% block content %}
+<div class="card wide-card">
+    <h1>Список учебных занятий</h1>
+
+    <div class="sort-links">
+        <span>Сортировка:</span>
+        <a href="?sort=study_date">По дате</a>
+        <a href="?sort=duration">По длительности</a>
+        <a href="?sort=subject">По предмету</a>
+    </div>
+
+    {% if sessions is empty %}
+        <p class="empty-text">Записей нет</p>
+    {% else %}
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Предмет</th>
+                    <th>Дата</th>
+                    <th>Минуты</th>
+                    <th>Сложность</th>
+                    <th>Результат</th>
+                    <th>Заметки</th>
+                    <th>Создано</th>
+                </tr>
+
+                {% for item in sessions %}
+                    <tr>
+                        <td>{{ item.subject }}</td>
+                        <td>{{ item.study_date }}</td>
+                        <td>{{ item.duration|format_duration }}</td>
+                        <td>{{ item.difficulty }}</td>
+                        <td>{{ item.result }}</td>
+                        <td>{{ item.notes }}</td>
+                        <td>{{ item.created_at }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+
+    <div class="actions">
+        <a href="index_twig.php" class="btn">Назад</a>
+    </div>
+</div>
+{% endblock %}
