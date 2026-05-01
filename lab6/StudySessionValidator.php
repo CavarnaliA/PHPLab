@@ -1,9 +1,35 @@
 <?php
 
+/**
+ * StudySessionValidator.php
+ *
+ * Класс для валидации данных учебной сессии.
+ *
+ * Реализует интерфейс ValidatorInterface и проверяет корректность
+ * данных, полученных из формы:
+ * - предмет
+ * - дату занятия
+ * - длительность
+ * - сложность
+ * - результат
+ * - заметки
+ *
+ * Возвращает массив ошибок, если данные некорректны.
+ */
+
 require_once 'ValidatorInterface.php';
 
+/**
+ * Валидатор учебной сессии
+ */
 class StudySessionValidator implements ValidatorInterface
 {
+    /**
+     * Проверяет входные данные формы учебной сессии.
+     *
+     * @param array $data входные данные ($_POST)
+     * @return array массив ошибок (если есть)
+     */
     public function validate(array $data): array
     {
         $errors = [];
